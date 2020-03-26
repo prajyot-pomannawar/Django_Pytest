@@ -1,0 +1,50 @@
+Project Information:
+
+This is a web application for online book shop. This uses django-rest framework and mysql database at the backend. 
+There are 3 model classes namely books, users and log. 
+Templates are not used right now in the project to display data on UI on client sides as major focus was on building unit test cases.
+Hence output Is shown in json format.
+
+1. Pytest_demo contains project with test cases using pytest
+2. bookstore containes project with python unit test cases.
+
+Refer images for data stored in database used in pytest demo.
+
+use following urls for starting on client side. You Can Refer bookshopapp.urls.py for all url mappings.
+
+localhost:8080/books 
+localhost:8080/users
+
+for updating any user information, user is restricted to update his/her email as email cannot be changed once set at the time of registration.
+If user tries to update email, error is displayed otherwise updated data is stored on database side
+
+For Searching any book, it is first checked whether user is signed in or not.
+Also incoming email and password is checked and then only searched books are displayed.
+
+Use following structure of input for checking post,put and search functions
+
+POST/PUT Method for User:
+{
+"fname":"",
+"lname":"",
+"email":"",
+"password":"",
+"mobile":""
+}
+
+POST/PUT Method for Book:
+{
+"title":"",
+"author":"",
+"publication":"",
+"type":"",
+"isbn":   ,             Integer
+"price":                Float
+}
+
+SEARCH BOOK:
+{
+"email":"prajyot@gmail",
+"password":"prajyot@123",
+"title":"c++"
+}
